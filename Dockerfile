@@ -4,7 +4,7 @@ FROM node:20 AS frontend
 WORKDIR /app/frontend
 
 # Copy frontend code
-COPY frontend /app/frontend
+COPY https://github.com/AigrieTeam/frontend.git /app/frontend
 
 # Install dependencies and build
 RUN npm install
@@ -16,7 +16,7 @@ FROM node:latest AS backend
 WORKDIR /app/backend
 
 # Copy backend code
-COPY backend /app/backend
+COPY https://github.com/AigrieTeam/backend.git /app/backend
 
 # Install dependencies
 RUN npm install
