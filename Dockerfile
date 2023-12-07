@@ -3,21 +3,21 @@ FROM alpine/git as frontend
 WORKDIR /app/frontend
 
 RUN git clone https://github.com/username/frontend.git .
-
+RUN ls
 FROM alpine/git as backend
 
 WORKDIR /app/backend
 
 RUN git clone https://github.com/username/backend.git .
 
-FROM node:latest as frontend-build
+FROM node:20 as frontend-build
 
 WORKDIR /app/frontend
 
 RUN npm install
 RUN npm run Build
 
-FROM node:latest as backend-build
+FROM node:20 as backend-build
 
 WORKDIR /app/backend
 
