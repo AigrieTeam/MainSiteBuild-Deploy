@@ -27,6 +27,6 @@ jobs:
           ref: main
           path: https://github.com/AigrieTeam/backend.git
             
+      - uses: actions/checkout@v3
       - name: Build the Docker image
-        uses: actions/checkout@v3
         run: docker build . --file Dockerfile --tag latest:$(date +%s)
