@@ -14,7 +14,7 @@ FROM node:20 as frontend-build
 
 WORKDIR /app/frontend
 
-RUN ls /app
+RUN ls /app/frontend
 RUN npm install
 RUN npm run Build
 
@@ -22,7 +22,7 @@ FROM node:20 as backend-build
 
 WORKDIR /app/backend
 
-RUN ls
+RUN ls /app/backend
 RUN npm install
 
 FROM nginx:alpine
