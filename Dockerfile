@@ -1,36 +1,31 @@
-# Stage 1: Build the frontend
-FROM node:20 AS frontend
+FROM alpine/git as frontend
 
 WORKDIR /app/frontend
 
-# Copy frontend code
-COPY frontend /app/frontend
+RUN git clone https://github.com/username/frontend.git .
 
-# Install dependencies and build
-RUN npm install
-RUN npm run build
-
-# Stage 2: Build the backend
-FROM node:latest AS backend
+FROM alpine/git as backend
 
 WORKDIR /app/backend
 
-# Copy backend code
-COPY backend /app/backend
+RUN git clone https://github.com/username/backend.git .
 
-# Install dependencies
+FROM node:latest as frontend-build
+
+WORKDIR /app/frontend
+
+RUN npm install
+RUN npm run Build
+
+FROM node:latest as backend-build
+
+WORKDIR /app/backend
+
 RUN npm install
 
-# Stage 3: Final image
-FROM node:latest
+FROM nginx:alpine
 
-WORKDIR /app
+COPY --from=frontend-build /app/frontend/build /usr/share/nginx/html
+COPY --from=backend-build /app/backend /app/backend
 
-# Copy built frontend from the first stage
-COPY --from=frontend /app/frontend/build /app/frontend/build
-
-# Copy built backend from the second stage
-COPY --from=backend /app/backend /app/backend
-
-# Set up the combined application
-CMD node backend/server.js
+CMD ["node", "/app/backend/server.js"]
