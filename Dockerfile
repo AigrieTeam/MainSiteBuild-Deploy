@@ -1,20 +1,20 @@
-FROM alpine/git as frontend
+# FROM alpine/git as frontend
 
-WORKDIR /app/frontend
+# WORKDIR /app/frontend
 
-RUN git clone https://github.com/AigrieTeam/frontend.git .
+# RUN git clone https://github.com/AigrieTeam/frontend.git .
 
-FROM alpine/git as backend
+# FROM alpine/git as backend
 
-WORKDIR /app/backend
+# WORKDIR /app/backend
 
-RUN git clone https://github.com/AigrieTeam/backend.git .
+# RUN git clone https://github.com/AigrieTeam/backend.git .
 
 FROM node:20 as frontend-build
 
 WORKDIR /app/frontend
 
-RUN ls
+RUN ls /app
 RUN npm install
 RUN npm run Build
 
