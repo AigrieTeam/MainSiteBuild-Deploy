@@ -29,7 +29,7 @@ jobs:
   
         - name: Build Docker image
           run: |
-            docker buildx build --platform linux/amd64,linux/arm64 -t mistergg/test-container:latest .
+            docker buildx build --platform linux/amd64,linux/arm64 -f /Dockerfile -t mistergg/test-container:latest .
           env:
             DOCKER_BUILDKIT: 1
 
