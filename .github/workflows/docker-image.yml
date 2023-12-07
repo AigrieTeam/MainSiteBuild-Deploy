@@ -16,16 +16,15 @@ jobs:
       - name: Checkout frontend
         uses: actions/checkout@v2
         with:
-          repository: username/frontend-repo
+          repository: https://github.com/AigrieTeam/frontend.git
           ref: main
-          path: https://github.com/AigrieTeam/frontend.git
-
+          path: frontend
       - name: Checkout backend
         uses: actions/checkout@v2
         with:
-          repository: username/backend-repo
+          repository: https://github.com/AigrieTeam/backend.git
           ref: main
-          path: https://github.com/AigrieTeam/backend.git
+          path: backend
             
       - uses: actions/checkout@v3
       - name: Build the Docker image
