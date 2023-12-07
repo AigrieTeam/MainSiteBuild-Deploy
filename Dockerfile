@@ -5,13 +5,13 @@ WORKDIR /app/frontend
 RUN git clone https://github.com/AigrieTeam/frontend.git .
 RUN ls /app/frontend
 
-FROM node:20 as frontend-build
+# FROM node:20 as frontend-build
 
-WORKDIR /app/frontend
+# WORKDIR /app/frontend
 
-RUN ls /app/frontend
-RUN npm install
-RUN npm run Build
+# RUN ls /app/frontend
+# RUN npm install
+# RUN npm run Build
 
 # FROM alpine/git as backend
 
