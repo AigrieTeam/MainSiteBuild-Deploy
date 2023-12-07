@@ -2,14 +2,14 @@ FROM alpine/git as frontend
 
 WORKDIR /app/frontend
 
-RUN git clone https://github.com/username/frontend.git .
+RUN git clone https://github.com/AigrieTeam/frontend.git .
 RUN ls
 
 FROM alpine/git as backend
 
 WORKDIR /app/backend
 
-RUN git clone https://github.com/username/backend.git .
+RUN git clone https://github.com/AigrieTeam/backend.git .
 
 # FROM node:20 as frontend-build
 
