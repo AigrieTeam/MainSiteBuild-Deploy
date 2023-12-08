@@ -2,10 +2,9 @@ FROM ubuntu:22.04
 
 WORKDIR /app/frontend
 RUN apt-get update && apt-get install mysql-server -y && apt-get install curl -y
-RUN curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh
-RUN bash install_nvm.sh
-RUN . ~/.bashrc && nvm install --lts
-RUN nvm --version
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+RUN . ~/.profile 
+RUN nvm install node
 
 
 RUN git clone https://github.com/AigrieTeam/frontend.git .
