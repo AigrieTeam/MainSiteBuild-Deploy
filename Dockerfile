@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 WORKDIR /app/frontend
 
-RUN apt-get update && apt-get install -y nodejs npm && install mysql-server
+RUN apt-get update && apt-get install -y nodejs npm && apt-get install mysql-server
 
 RUN git clone https://github.com/AigrieTeam/frontend.git .
 RUN ls /app/frontend
