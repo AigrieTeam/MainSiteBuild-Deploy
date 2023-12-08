@@ -22,4 +22,4 @@ RUN ls /app/backend
 RUN cd /app/backend
 RUN npm install
 
-RUN node /app/backend/server.js
+# RUN node /app/backend/server.js
