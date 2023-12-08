@@ -13,7 +13,7 @@ RUN npm install -g npm@10.2.5
 RUN git clone https://github.com/AigrieTeam/frontend.git .
 RUN ls /app/frontend
 RUN cd /app/frontend
-RUN npm install && npm run build
+RUN npm install
 
 WORKDIR /app/backend
 
