@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 WORKDIR /app/frontend
-RUN apt-get update && apt-get install mysql-server -y && apt-get install curl -y && apt-get install source -y
+RUN apt-get update && apt-get install mysql-server -y && apt-get install curl -y
 RUN curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh
 RUN bash install_nvm.sh
 RUN nvm install --lts
