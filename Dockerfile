@@ -1,4 +1,4 @@
-FROM 21-alpine3.17
+FROM alpine:3.14
 
 WORKDIR /app/frontend
 
