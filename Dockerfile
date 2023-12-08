@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 WORKDIR /app/frontend
-RUN apt-get update && apt install curl
+RUN apt-get update && apt install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh 
 RUN apt-get install -y nodejs npm && apt-get install mysql-server -y
