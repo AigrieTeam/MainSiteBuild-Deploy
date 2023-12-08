@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:20
 
 WORKDIR /app/frontend
 RUN apt-get update && apt-get install -y git
