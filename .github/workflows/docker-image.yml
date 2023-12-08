@@ -16,14 +16,14 @@ jobs:
       - name: Checkout frontend
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/AigrieTeam/frontend.git
+          repository: AigrieTeam/frontend.git
           ref: main
           path: frontend
 
       - name: Checkout backend
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/AigrieTeam/backend.git
+          repository: AigrieTeam/backend.git
           ref: main
           path: backend
             
