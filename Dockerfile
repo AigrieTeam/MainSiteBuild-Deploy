@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM node:16
 
 WORKDIR /app/frontend
 RUN apt-get update && apt-get install mysql-server -y && apt-get install curl -y
