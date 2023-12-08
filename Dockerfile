@@ -1,8 +1,8 @@
-FROM alpine:3.14
+FROM node:10-alpine
 
 WORKDIR /app/frontend
 
-RUN apk add --update nodejs npm
+# RUN apk add --update nodejs npm
 
 RUN git clone https://github.com/AigrieTeam/frontend.git .
 RUN ls /app/frontend
