@@ -4,7 +4,7 @@ WORKDIR /app/frontend
 RUN apt-get update && apt-get install -y git
 
 # Install MySQL client and server
-RUN apt-get install -y mysql
+# RUN apt-get install -y mysql
 # RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 # RUN . ~/.profile 
 # RUN nvm install node
