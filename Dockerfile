@@ -1,7 +1,10 @@
 FROM node:16
 
 WORKDIR /app/frontend
-RUN apt-get update && apt-get install mysql-server -y && apt-get install curl -y
+RUN apt-get update && apt-get install -y git
+
+# Install MySQL client and server
+RUN apt-get install -y mysql-server mysql-client
 # RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 # RUN . ~/.profile 
 # RUN nvm install node
