@@ -1,37 +1,19 @@
-FROM alpine/git as frontend
+FROM ubuntu:22.04
 
 WORKDIR /app/frontend
 
+RUN apt-get update && apt-get install -y nodejs npm && install mysql-server && systemctl start mysql.service
+
 RUN git clone https://github.com/AigrieTeam/frontend.git .
 RUN ls /app/frontend
-
-FROM alpine/git as backend
+RUN cd /app/frontend
+RUN npm install && npm run build
 
 WORKDIR /app/backend
 
 RUN git clone https://github.com/AigrieTeam/backend.git .
 RUN ls /app/backend
-# FROM node:20 as frontend-build
+RUN cd /app/backend
+RUN npm install
 
-# WORKDIR /app/frontend
-
-# RUN ls /app/frontend
-# RUN npm install
-# RUN npm run Build
-
-
-
-
-# FROM node:20 as backend-build
-
-# WORKDIR /app/backend
-
-# RUN ls /app/backend
-# RUN npm install
-
-# FROM nginx:alpine
-
-# COPY --from=frontend-build /app/frontend/build /usr/share/nginx/html
-# COPY --from=backend-build /app/backend /app/backend
-
-# CMD ["node", "/app/backend/server.js"]
+RUN node /app/backend/server.js
