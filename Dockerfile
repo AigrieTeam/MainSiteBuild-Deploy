@@ -2,7 +2,7 @@ FROM node:16
 
 WORKDIR /app/frontend
 RUN apt-get update && apt-get install -y git
-RUN npm install -g npm@10.2.
+RUN npm install -g npm@10.2.0
 # Install MySQL client and server
 # RUN apt-get install -y mysql
 # RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
